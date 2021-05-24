@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "FrontStonks"
+    }
+  },
+  "defaultProject": "FrontStonks",
+  "cli": {
+    "analytics": "6a0e614d-457d-4ddc-899e-d1f0e6760946"
+  }
 }

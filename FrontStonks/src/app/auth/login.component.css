@@ -1,0 +1,34 @@
+.abs-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.card-body {
+  background-image: linear-gradient(5deg, #faf5ff 0, #cecbf7 50%, #a2a3da 100%);
+}
+
+.card-header {
+  background: skyblue
+}
+.column{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding: 20px;
+  border-radius: 2rem;
+  
+}
+.btn {
+  background: #E1CFD6;
+  color: black;
+  font-weight: bold;
+}
+.gallery img{
+  position: relative;
+  width: 350px;
+  margin: 0px 0px 20px 0px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
