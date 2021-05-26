@@ -6,10 +6,26 @@ import { LoginComponent } from './auth/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './auth/register.component';
+import { MainpageComponent } from './main page/mainpage/mainpage.component';
+import {MatButtonModule} from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatListModule} from '@angular/material/list';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+
+
+
 
 const root: Routes = [
   {path:'', component: LoginComponent},
   {path:'register', component: RegisterComponent},
+  {path:'main', component: MainpageComponent},
 
 ]
 
@@ -17,12 +33,24 @@ const root: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MainpageComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(root)
+    RouterModule.forRoot(root),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatToolbarModule,
+    FlexLayoutModule,
+    MatIconModule,
+    MatMenuModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

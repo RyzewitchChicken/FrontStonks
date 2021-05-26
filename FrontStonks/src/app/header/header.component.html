@@ -1,0 +1,39 @@
+<mat-toolbar >
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="toggleSideBar()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Stonks</span>
+      <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+        <ul fxLayout="row" fxLayoutGap="20px">
+          <li>
+            <button mat-icon-button>
+                <mat-icon>settings</mat-icon>
+            </button>
+          </li>
+          <li>
+            <button mat-icon-button> 
+              <mat-icon>help</mat-icon>
+            </button>
+          </li>
+          <li>
+            <button mat-button [matMenuTriggerFor]="menu">
+                <mat-icon>account_box</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>exit_to_app</mat-icon>
+                    Salir
+                </button>
+  
+            </mat-menu>
+  
+          </li>
+        </ul>
+  
+      </div>
+    </mat-toolbar-row>
+  
+  </mat-toolbar>
+
+
