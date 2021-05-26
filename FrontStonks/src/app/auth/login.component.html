@@ -2,55 +2,44 @@
   <h2>Ya has iniciado sesión</h2>
 </div>
 
+
+
 <ng-template #loggedOut>
 
-  <div class="row">
 
-    <div class="abs-center col-sm-7 ">
-      <div class="container d-flex justify-content-center">
-        <div class="card">
-          <div class="card-header">
-            <ul class="nav nav-tabs">
-              <li class="nav-item">
-                <a class="nav-link active" routerLink="">Iniciar Sesión</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/register">Crear Cuenta</a>
-              </li>
+  <div class="abs-center">
 
-            </ul>
+    <form [formGroup]="profileForm" class="form-container ">
+      <mat-card class="card-body">
+        <mat-card-header class="center-elements">
+          <mat-card-title>Iniciar Sesión</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="center-elements">
+          <mat-form-field>
+            <input formControlName="userName" type="text" matInput placeholder="Nombre de usuario">
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="password" matInput placeholder="Contraseña">
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="center">
+            <button mat-raised-button routerLink=""> Iniciar sesión</button>
+            <button mat-raised-button routerLink="/register"> Registrarse</button>
           </div>
-          <div class="card-body">
-            <form #f="ngForm" novalidate>
-              <div class="form-group">
-                <label for="nombreUsuario">Nombre de Usuario</label>
-                <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" [(ngModel)]="userName"
-                  required>
-              </div>
-              <div class="form-group">
-                <label for="password">Contraseña</label>
-                <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password"
-                  required>
-              </div>
-              <div class="form-group">
-                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
-                  <i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+        </mat-card-actions>
+      </mat-card>
 
-    <div class="abs-center col-sm-4 ">
-      <div class="column">
-        <h1>Empieza evaluando <br> las tasas de tus bancos</h1>
-        <div class="gallery">
-          <img src="assets\images\rate.png">
-          <img src="assets\images\bancos.jpg">
-        </div>
-      </div>
-      
-    </div>
+    </form>
+
+    <mat-card class="column">
+      <mat-card-header>
+        <mat-card-title>Empieza evaluando <br> las tasas de tus bancos</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="gallery">
+        <img mat-card-image src="assets\images\rate.png">
+        <img mat-card-image src="assets\images\bancos.jpg">
+      </mat-card-content>
+    </mat-card>
   </div>
 </ng-template>

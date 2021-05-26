@@ -7,8 +7,16 @@
 
 .card-body {
   background-image: linear-gradient(5deg, #faf5ff 0, #cecbf7 50%, #a2a3da 100%);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  color: #000000;
+}
+::placeholder{
+  font-size: 30px;
 }
 
+.form-container{
+  width: 300px;
+}
 .card-header {
   background: skyblue
 }
@@ -17,7 +25,6 @@
   transition: 0.3s;
   padding: 20px;
   border-radius: 2rem;
-  
 }
 .btn {
   background: #E1CFD6;

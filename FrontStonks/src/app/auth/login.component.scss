@@ -7,14 +7,13 @@
   min-height: 100vh;
 }
 
-.center {
-  min-height: 0vh;
-
-}
-
 .center-elements {
   min-height: 0vh;
   flex-direction: column;
+}
+
+.center {
+  min-height: 0vh;
 }
 
 .card-body {
@@ -39,10 +38,31 @@ button {
 .card-header {
   background: skyblue
 }
+form{
+    margin-right: 10%;
+}
+
+.column {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background: white;
+  transition: 0.3s;
+  padding: 20px;
+  border-radius: 2rem;
+  color: #000000;
+}form
 
 .btn {
   background: #E1CFD6;
   color: black;
-
   font-weight: bold;
+}
+
+.gallery img {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin: 0px 0px 20px 0px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
 }

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './auth/register.component';
 import { MainpageComponent } from './main page/mainpage/mainpage.component';
 import {MatButtonModule} from '@angular/material/button';
@@ -18,9 +18,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-
-
-
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 const root: Routes = [
   {path:'', component: LoginComponent},
@@ -49,7 +49,11 @@ const root: Routes = [
     MatToolbarModule,
     FlexLayoutModule,
     MatIconModule,
+    MatCardModule,
     MatMenuModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatListModule
   ],
   providers: [],
