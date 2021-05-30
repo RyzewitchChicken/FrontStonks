@@ -21,12 +21,15 @@ import { FooterComponent } from './footer/footer.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { TransactionComponent } from './transaction/transaction.component';
+import {MatTableModule} from '@angular/material/table';
+import { TransactionService } from './service/transaction.service';
+import { ClienteService } from './service/cliente.service';
 const root: Routes = [
   {path:'', component: LoginComponent},
   {path:'register', component: RegisterComponent},
   {path:'main', component: MainpageComponent},
-
+  {path:'transaction', component: TransactionComponent},
 ]
 
 @NgModule({
@@ -36,7 +39,8 @@ const root: Routes = [
     RegisterComponent,
     MainpageComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,
@@ -54,9 +58,13 @@ const root: Routes = [
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
     MatListModule
   ],
-  providers: [],
+  providers: [
+    ClienteService,
+    TransactionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

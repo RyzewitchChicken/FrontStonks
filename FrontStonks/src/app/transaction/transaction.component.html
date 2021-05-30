@@ -1,0 +1,65 @@
+<app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
+
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]=sideBarOpen>
+    <mat-nav-list>
+      <h2 matSubheader>Opciones</h2>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/main">
+        <mat-icon>bar_chart </mat-icon> Resumen
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="n">
+        <mat-icon>credit_card </mat-icon> Cuentas
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/transaction">
+        <mat-icon>list </mat-icon> Transacciones
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="n">
+        <mat-icon>folder_open </mat-icon> Reportes
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+      <div class="table-container">
+        <mat-card-title>
+            Mis transaciones
+        </mat-card-title>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+          <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+    
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+    
+          <!-- Name Column -->
+          <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef> tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+          </ng-container>
+    
+          <!-- Weight Column -->
+          <ng-container matColumnDef="fecha">
+            <th mat-header-cell *matHeaderCellDef> fecha </th>
+            <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+          </ng-container>
+    
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="capital">
+            <th mat-header-cell *matHeaderCellDef> capital</th>
+            <td mat-cell *matCellDef="let element"> {{element.capital}} </td>
+          </ng-container>
+          <ng-container matColumnDef="monto">
+            <th mat-header-cell *matHeaderCellDef> monto </th>
+            <td mat-cell *matCellDef="let element"> {{element.monto}} </td>
+          </ng-container>
+    
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+  </mat-drawer-content>
+</mat-drawer-container>

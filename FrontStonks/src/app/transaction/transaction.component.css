@@ -1,0 +1,12 @@
+table {
+  width: 100%;
+}
+
+.table-container {
+  width: 85%;
+  margin: 20px 0px 20px 40px;
+}
+
+mat-drawer-container {
+  height: 100%;
+}
