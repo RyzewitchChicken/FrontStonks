@@ -19,7 +19,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -29,12 +29,18 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatTableModule} from '@angular/material/table';
 import { TransactionService } from './service/transaction.service';
 import { ClienteService } from './service/cliente.service';
+import { CuentasComponent } from './cuentas/cuentas.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import { GoalsComponent } from './goals/goals.component';
 
 const root: Routes = [
   {path:'', component: LoginComponent},
   {path:'register', component: RegisterComponent},
   {path:'main', component: MainpageComponent},
   {path:'transaction', component: TransactionComponent},
+  {path:'cuentas', component:CuentasComponent},
+  {path:'reportes',component:ReportesComponent},
+  {path:'goals',component:GoalsComponent}
 ]
 
 @NgModule({
@@ -43,9 +49,11 @@ const root: Routes = [
     LoginComponent,
     RegisterComponent,
     MainpageComponent,
-    FooterComponent,
     HeaderComponent,
     TransactionComponent,
+    CuentasComponent,
+    ReportesComponent,
+    GoalsComponent,
     
   ],
   imports: [

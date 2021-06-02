@@ -5,13 +5,14 @@
 
 
 <mat-drawer-container>
-  <mat-drawer mode="side" [opened]=sideBarOpen>
-    <mat-nav-list>
+  <mat-drawer class="bar" mode="side" [opened]=sideBarOpen>
+    <mat-nav-list >
       <h2 matSubheader>Opciones</h2>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/main"><mat-icon>bar_chart </mat-icon> Resumen</a>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="n"><mat-icon>credit_card </mat-icon> Cuentas</a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/cuentas"><mat-icon>credit_card </mat-icon> Cuentas</a>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/transaction"><mat-icon>list </mat-icon> Transacciones</a>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="n"><mat-icon>folder_open </mat-icon> Reportes</a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/reportes"><mat-icon>folder_open </mat-icon> Reportes</a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/goals">	<mat-icon>next_week</mat-icon> Metas</a>
     </mat-nav-list>
   </mat-drawer>
 
@@ -33,7 +34,7 @@
         <mat-grid-tile>
           <mat-card class="dashboard-card">
             <mat-card-header>
-              <mat-card-title>Cuentas</mat-card-title>
+              <mat-card-title>Cuentas  	<mat-icon routerLink="/cuentas">add_box</mat-icon> </mat-card-title>
             </mat-card-header>
             <mat-card-content>
               <div class="card">
@@ -73,11 +74,32 @@
         <mat-grid-tile>
           <mat-card class="dashboard-card">
             <mat-card-header>
-              <mat-card-title>Transacciones</mat-card-title>
+              <mat-card-title >Transacciones <mat-icon routerLink="/transaction">info</mat-icon></mat-card-title>
+              
             </mat-card-header>
+            <mat-divider></mat-divider>
             <mat-card-content >
               <table >
-
+                <tr>
+                  <th>Banco</th>
+                  <th>Fecha</th> 
+                  <th>Monto</th>
+                </tr>
+                <tr>
+                  <td>Interbank</td>
+                  <td></td>
+                  <td>1000</td>
+                </tr>
+                <tr>
+                  <td>Interbank</td>
+                  <td></td>
+                  <td>1000</td>
+                </tr>
+                <tr>
+                  <td>Interbank</td>
+                  <td>Doe</td>
+                  <td>500</td>
+                </tr>
               </table>
             </mat-card-content>
           </mat-card>
@@ -85,7 +107,7 @@
         <mat-grid-tile>
           <mat-card class="dashboard-card">
             <mat-card-header>
-              <mat-card-title>Reportes</mat-card-title>
+              <mat-card-title routerLink="/cuentas">Reportes</mat-card-title>
             </mat-card-header>
             <mat-card-content>
             </mat-card-content>
