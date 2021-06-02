@@ -8,16 +8,95 @@
   <mat-drawer mode="side" [opened]=sideBarOpen>
     <mat-nav-list>
       <h2 matSubheader>Opciones</h2>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="n"><mat-icon>bar_chart </mat-icon> Resumen</a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/main"><mat-icon>bar_chart </mat-icon> Resumen</a>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="n"><mat-icon>credit_card </mat-icon> Cuentas</a>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="n"><mat-icon>list </mat-icon> Transacciones</a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/transaction"><mat-icon>list </mat-icon> Transacciones</a>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="n"><mat-icon>folder_open </mat-icon> Reportes</a>
     </mat-nav-list>
   </mat-drawer>
 
-  <mat-drawer-content>   
-    Hola
-  </mat-drawer-content>
+<mat-drawer-content>
+  <div class="container">
+      <h1>Bienvenido </h1> 
+      <mat-grid-list cols="2" rowHeight="320px" gutterSize="25px">
+        <mat-grid-tile>
+          <mat-card class="dashboard-card">
+            <mat-card-header>
+              <mat-card-title>Comparador</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div>contenido</div>
+            </mat-card-content>
+          </mat-card>
+          
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-card class="dashboard-card">
+            <mat-card-header>
+              <mat-card-title>Cuentas</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="card">
+                <div class="card__front card__part">
+                  <p class="card__info">BAnco .......</p>
+                  <p class="card_numer">**** **** **** 6258</p>
+                  <div class="card__space-75">
+                    <span class="card__label">Card holder</span>
+                    <p class="card__info">John Doe</p>
+                  </div>
+                  <div class="card__space-25">
+                    <span class="card__label">Expires</span>
+                          <p class="card__info">10/25</p>
+                  </div>
+                </div>
+              </div>
+              <div class="infoC">
+                <p>2000</p>
+                <p>Balance actual</p>
+                <p>2000</p>
+                <p>Interes Ganado</p>
+                <p>2000</p>
+                <p>Interes retirado</p>
+              </div>
+              <div class="int">
+                <p align="left">Interes Final Estimado</p>
+                <p align="center">3000/4000</p>
+                
+                <div class="but">
+                  <button mat-stroked-button>Registrar Retiro</button>
+                </div>
+              </div>
+            </mat-card-content>
+
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-card class="dashboard-card">
+            <mat-card-header>
+              <mat-card-title>Transacciones</mat-card-title>
+            </mat-card-header>
+            <mat-card-content >
+              <table >
+
+              </table>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-card class="dashboard-card">
+            <mat-card-header>
+              <mat-card-title>Reportes</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+  </div>
+</mat-drawer-content>
+
+
+
 </mat-drawer-container>  
 <!--FIN HEAHDER-->
 
@@ -25,5 +104,3 @@
 
 
 
-
-<app-footer></app-footer>

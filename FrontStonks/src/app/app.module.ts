@@ -9,6 +9,8 @@ import { RegisterComponent } from './auth/register.component';
 import { MainpageComponent } from './main page/mainpage/mainpage.component';
 import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -22,9 +24,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { TransactionComponent } from './transaction/transaction.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 import {MatTableModule} from '@angular/material/table';
 import { TransactionService } from './service/transaction.service';
 import { ClienteService } from './service/cliente.service';
+
 const root: Routes = [
   {path:'', component: LoginComponent},
   {path:'register', component: RegisterComponent},
@@ -40,7 +45,8 @@ const root: Routes = [
     MainpageComponent,
     FooterComponent,
     HeaderComponent,
-    TransactionComponent
+    TransactionComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -59,7 +65,10 @@ const root: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule,
+    MatProgressBarModule
+    
   ],
   providers: [
     ClienteService,

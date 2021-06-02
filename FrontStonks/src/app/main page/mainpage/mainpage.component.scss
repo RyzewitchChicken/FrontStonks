@@ -1,7 +1,12 @@
+
 :host {
     display: flex;
     flex-direction: column;
     height: 100%;
+    .mat-icon {
+        vertical-align: middle;
+        margin-right: 20px;
+      }
     
 }
 mat-drawer {
@@ -9,15 +14,146 @@ mat-drawer {
 }
 mat-drawer-container {
     height: 100%;
-}
-footer {
-    padding: 25px;
+    background-color: white;
+    
+    
 }
 
-ul li {
-    list-style: none;
-}
+
+
 
 mat-drawer-content {
     padding: 20px;
+    
+}
+h1 {
+    color: black;
+    font-family: 'Space Mono', monospace;
+}
+mat-grid-tile {
+    color: black;
+    border-color: black;
+    border-radius: 5px;
+    
+}
+
+mat-grid-tile-header {
+    color:black;
+}
+mat-card-title {
+    text-align: left;
+
+}
+a {
+    font-family: 'Space Mono', monospace;
+}
+h2 {
+    font-family: 'Space Mono', monospace;
+}
+
+
+.dashboard-card {  
+    position: absolute;  
+    top: 15px;  
+    left: 15px;  
+    right: 15px;  
+    bottom: 15px;  
+    background-color: white;
+    color: black;
+    font-family: 'Space Mono', monospace;
+  } 
+
+
+  
+  
+  .card{
+  width: 160px;
+  height: 90px;
+
+    
+  }
+  
+  .card__part{
+
+    
+      top: 0;
+    position: absolute;
+    
+    left: 0;
+    display: inline-block;
+      width: 160px;
+      height: 100px;
+      background-image: url('https://image.ibb.co/bVnMrc/g3095.png'), linear-gradient(to right bottom, #fd696b, #fa616e, #f65871, #f15075, #ec4879); /*linear-gradient(to right bottom, #fd8369, #fc7870, #f96e78, #f56581, #ee5d8a)*/
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 5px;
+      
+  }
+  
+  
+  .card_numer {
+      display: block;
+      width: 100%;
+      word-spacing: 4px;
+      font-size: 5px;
+      letter-spacing: 2px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 5px;
+      margin-top: 7px;
+  }
+  
+  .card__space-75 {
+      width: 75%;
+      float: left;
+  }
+  
+  .card__space-25 {
+      width: 25%;
+      float: left;
+  }
+  
+  .card__label {
+      font-size: 6px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: px;
+      margin-left: 5px;
+  }
+  
+  .card__info {
+      margin-bottom: 0;
+      margin-top: 5px;
+      margin-left: 5px;
+      font-size: 9px;
+      line-height: 18px;
+      color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+
+  
+.infoC {
+    text-align: right;
+    margin-top: -130px;
+}
+.but {
+    float: right;
+    margin-bottom: -10px;
+}
+
+.int {
+    
+    display: inline;
+}
+h4 {
+    font-family: 'Space Mono', monospace;
+}
+table {
+    width: 10px;
+} 
+mat-progress-bar {
+    width: 100px;
 }

@@ -4,25 +4,17 @@
   <mat-drawer mode="side" [opened]=sideBarOpen>
     <mat-nav-list>
       <h2 matSubheader>Opciones</h2>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="/main">
-        <mat-icon>bar_chart </mat-icon> Resumen
-      </a>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="n">
-        <mat-icon>credit_card </mat-icon> Cuentas
-      </a>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="/transaction">
-        <mat-icon>list </mat-icon> Transacciones
-      </a>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="n">
-        <mat-icon>folder_open </mat-icon> Reportes
-      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/main"><mat-icon>bar_chart </mat-icon> Resumen</a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="n"><mat-icon>credit_card </mat-icon> Cuentas</a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="n"><mat-icon>list </mat-icon> Transacciones</a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="n"><mat-icon>folder_open </mat-icon> Reportes</a>
     </mat-nav-list>
   </mat-drawer>
 
   <mat-drawer-content>
       <div class="table-container">
         <mat-card-title>
-            Mis transaciones
+            Mis Transacciones
         </mat-card-title>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     
