@@ -3,7 +3,7 @@
       <button mat-icon-button (click)="toggleSideBar()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>Stonks</span>
+      <span routerLink="/main">Stonks</span>
       <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
         <ul fxLayout="row" fxLayoutGap="20px">
           <li>
@@ -21,8 +21,8 @@
                 <mat-icon>account_box</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
-                <button mat-menu-item>
-                    <mat-icon>exit_to_app</mat-icon>
+                <button mat-menu-item >
+                    <mat-icon >exit_to_app</mat-icon>
                     Salir
                 </button>
   

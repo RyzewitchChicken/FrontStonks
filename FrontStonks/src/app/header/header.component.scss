@@ -1,7 +1,9 @@
 ul li {
     list-style: none;
+    
 }
 mat-toolbar{
     color:black;
-    background-color: cadetblue;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(174,189,56,1) 0%, rgba(80,81,96,1) 100%);
 }

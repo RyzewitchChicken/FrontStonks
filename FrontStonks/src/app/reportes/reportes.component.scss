@@ -1,0 +1,63 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .mat-icon {
+        vertical-align: middle;
+        margin-right: 20px;
+      }
+    
+}
+mat-drawer {
+    width: 350px;
+}
+mat-drawer-container {
+    height: 100%;
+    background-color: white;
+    
+    
+}
+
+
+
+
+mat-drawer-content {
+    padding: 20px;
+    
+}
+h1 {
+    color: black;
+    font-family: 'Space Mono', monospace;
+}
+mat-grid-tile {
+    color: black;
+    border-color: black;
+    border-radius: 5px;
+    
+}
+
+mat-grid-tile-header {
+    color:black;
+}
+mat-card-title {
+    text-align: left;
+
+}
+a {
+    font-family: 'Space Mono', monospace;
+}
+h2 {
+    font-family: 'Space Mono', monospace;
+}
+
+
+.dashboard-card {  
+    position: absolute;  
+    top: 15px;  
+    left: 15px;  
+    right: 15px;  
+    bottom: 15px;  
+    background-color: white;
+    color: black;
+    font-family: 'Space Mono', monospace;
+  }

@@ -1,0 +1,45 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .mat-icon {
+        vertical-align: middle;
+        margin-right: 20px;
+      }
+    
+}
+mat-drawer {
+    width: 350px;
+}
+mat-drawer-container {
+    height: 100%;
+    background-color: white;
+    
+    
+}
+
+table {
+    width: 100%;
+
+  }
+  
+  .table-container {
+    width: 95%;
+    margin: 20px 0px 20px 40px;
+    height: 100%;
+    
+  }
+  mat-card-title {
+      color: black;
+      
+  }
+
+a {
+    font-family: 'Space Mono', monospace;
+}
+h2 {
+    font-family: 'Space Mono', monospace;
+}  
+table {
+    font-family: 'Space Mono', monospace;
+}
