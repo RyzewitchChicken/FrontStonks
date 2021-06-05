@@ -1,6 +1,6 @@
 export class Transaction {
     // position','tipo','fecha', 'capital', 'monto
-    id: number;
+    id:number;
     type: string;
     date: Date;
     capital: number;

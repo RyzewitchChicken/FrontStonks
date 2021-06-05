@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { Cliente } from '../models/cliente';
 import { ClienteService } from '../service/cliente.service';
 import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   cliente = new Cliente();
   // userName : String;
   // password: String;
-  constructor(private formBuilder: FormBuilder, private clientService: ClienteService,private router:Router) { }
+  constructor(private formBuilder: FormBuilder,private appComponent:AppComponent, private clientService: ClienteService,private router:Router) { }
   profileForm = this.formBuilder.group({
     userName: [''],
     password: [''],
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
       
       if (data) {
         console.log(data);
+        this.appComponent.acountID = data.id;
         this.router.navigate(['/main']);
         // this.isLogged = true;
       }else{

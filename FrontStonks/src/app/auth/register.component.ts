@@ -48,17 +48,17 @@ export class RegisterComponent implements OnInit {
     }
     this.cliente.address = this.registerForm.value.address;
     this.cliente.country = this.registerForm.value.country;
-    const new_client ={
-      dni: this.cliente.dni,
-      firstName: this.cliente.firstName,
-      lastName: this.cliente.lastName,
-      phone: this.cliente.phone,
-      address: this.cliente.address,
-      username: this.cliente.username,
-      password: this.cliente.password,
-      country: this.cliente.country
-    };
-    this.clientService.registerClient(new_client).subscribe(
+    // const new_client ={
+    //   dni: this.cliente.dni,
+    //   firstName: this.cliente.firstName,
+    //   lastName: this.cliente.lastName,
+    //   phone: this.cliente.phone,
+    //   address: this.cliente.address,
+    //   username: this.cliente.username,
+    //   password: this.cliente.password,
+    //   country: this.cliente.country
+    // };
+    this.clientService.registerClient(this.cliente).subscribe(
       data=>{
         this.router.navigate(['/']);
       }

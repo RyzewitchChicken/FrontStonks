@@ -1,4 +1,5 @@
 export class Cliente {
+    id:number;
     dni: number;
     password: string;
     firstName: string;
