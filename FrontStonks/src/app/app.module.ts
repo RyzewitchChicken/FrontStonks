@@ -25,6 +25,8 @@ import { TransactionComponent } from './transaction/transaction.component';
 import {MatTableModule} from '@angular/material/table';
 import { TransactionService } from './service/transaction.service';
 import { ClienteService } from './service/cliente.service';
+import { HttpClientModule } from '@angular/common/http';
+
 const root: Routes = [
   {path:'', component: LoginComponent},
   {path:'register', component: RegisterComponent},
@@ -59,6 +61,7 @@ const root: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    HttpClientModule,
     MatListModule
   ],
   providers: [

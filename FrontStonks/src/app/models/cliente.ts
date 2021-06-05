@@ -1,12 +1,14 @@
 export class Cliente {
-    id: number;
     dni: number;
-    email: string;
     password: string;
     firstName: string;
     lastName: string;
+    phone: string;
+    address: string;
+    username: string;
+    country: string;
     constructor() {
-        this.firstName = this.lastName = this.email = this.password ="";
+        this.firstName = this.username = this.password = this.phone = this.address = this.country = this.lastName = this.password = "";
         this.dni = null;
     }
 }

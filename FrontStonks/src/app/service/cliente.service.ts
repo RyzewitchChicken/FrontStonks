@@ -13,8 +13,11 @@ export class ClienteService {
   
   public share = this.client.asObservable();
 
-  getCliente(client:Cliente):Observable<Cliente[]>{
-    return this.http.get<Cliente[]>(this.url);
+  getCliente(cliente):Observable<Cliente>{
+    return this.http.get<Cliente>(`${this.url}/login/${cliente.username}/${cliente.password}`);
+  }
+  registerClient(cliente):Observable<Cliente>{
+    return this.http.post<Cliente>(this.url,cliente);
   }
   
 }
