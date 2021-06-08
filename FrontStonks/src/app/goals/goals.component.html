@@ -14,4 +14,25 @@
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/goals">	<mat-icon>next_week</mat-icon> Metas</a>
     </mat-nav-list>
   </mat-drawer>
+  <mat-drawer-content>
+    
+    <!-- <button (click)="getGoals()"></button> -->
+    <h1>Mis metas</h1>
+    <div  class="row table-card" *ngFor="let item of goalsList">
+      <div>
+
+      </div>
+      <mat-card class="col-sm-2 body-card">
+        <mat-card-title> {{item.name }}</mat-card-title>
+        <mat-card-subtitle>
+          fecha limite: {{item.dateGoal}}
+        </mat-card-subtitle>
+        <mat-card-content>
+          Precio: ${{item.goalAmount}}
+        </mat-card-content>
+        <!-- <mat-card-footer></mat-card-footer> -->
+      </mat-card>
+      
+    </div>
+  </mat-drawer-content>
 </mat-drawer-container>

@@ -33,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CuentasComponent } from './cuentas/cuentas.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { GoalsComponent } from './goals/goals.component';
+import { GoalsService } from './service/goals.service';
 
 const root: Routes = [
   {path:'', component: LoginComponent},
@@ -82,7 +83,8 @@ const root: Routes = [
   ],
   providers: [
     ClienteService,
-    TransactionService
+    TransactionService,
+    GoalsService
   ],
   bootstrap: [AppComponent]
 })
