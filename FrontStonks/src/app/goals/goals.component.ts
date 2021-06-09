@@ -41,7 +41,7 @@ export class GoalsComponent implements OnInit {
 
   getGoals(){
     // this.appComponent.acountID
-    this.goalsService.getGoals(1).subscribe(
+    this.goalsService.getGoals(this.appComponent.acountID).subscribe(
       (data: Goals[])=>{
         this.goalsList = data['content'];
       }
@@ -52,7 +52,7 @@ export class GoalsComponent implements OnInit {
     this.goal.name = this.goalsForm.value.name;
     this.goal.goalAmount = this.goalsForm.value.price;
     this.goal.dateGoal = this.goalsForm.value.date;
-    this.goalsService.addGoals(this.goal,1).subscribe(
+    this.goalsService.addGoals(this.goal,this.appComponent.acountID).subscribe(
       data =>{
         // console.log(data);
         this.getGoals();
@@ -62,7 +62,7 @@ export class GoalsComponent implements OnInit {
   }
   deleteGoal(goalID){
     // console.log(goalID);
-    this.goalsService.deleteGoal(1,goalID).subscribe(
+    this.goalsService.deleteGoal(this.appComponent.acountID,goalID).subscribe(
         (data)=>{
           console.log(data);
           this.getGoals();
@@ -76,7 +76,7 @@ export class GoalsComponent implements OnInit {
     this.goal.goalAmount = this.editForm.value.price;
     this.goal.dateGoal = this.editForm.value.date;
     console.log(this.goalId);
-    this.goalsService.editGoal(1,this.goalId,this.goal).subscribe(
+    this.goalsService.editGoal(this.appComponent.acountID,this.goalId,this.goal).subscribe(
       data =>{
         console.log(data);       
     })
