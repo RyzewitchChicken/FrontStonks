@@ -16,31 +16,34 @@
   </mat-drawer>
 
   <mat-drawer-content>
-    <mat-grid-list cols="1" rowHeight="100%" gutterSize="25px">
-        <mat-grid-tile>
-            <mat-card class="dashboard-card">
-                <mat-card-header>
-                  <mat-card-title>Cuentas</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <div class="card">
-                        <div class="card__front card__part">
-                          <p class="card__info">BAnco .......</p>
-                          <p class="card_numer">**** **** **** 6258</p>
-                          <div class="card__space-75">
-                            <span class="card__label">Card holder</span>
-                            <p class="card__info">John Doe</p>
-                          </div>
-                          <div class="card__space-25">
-                            <span class="card__label">Expires</span>
-                                  <p class="card__info">10/25</p>
-                          </div>
-                        </div>
-                      </div>
-                </mat-card-content>
-              </mat-card>
-        </mat-grid-tile>
-      </mat-grid-list>
+    <div class="title">
+      <h1>Cuentas</h1> 
+      <button mat-raised-button (click)="openDialog()">Agregar Cuenta</button>
+    </div> 
+    <mat-grid-list cols="2" rowHeight="320px" gutterSize="25px">
+      <mat-grid-tile *ngFor="let b of boards">
+        <mat-card>
+          <mat-card-title>{{b.name}}</mat-card-title>
+          <mat-card-content>
+            <div class="card">
+              <div class="card__front card__part">
+                <p class="card__info">BAnco .......</p>
+                <p class="card_numer">**** **** **** 6258</p>
+                <div class="card__space-75">
+                  <span class="card__label">Card holder</span>
+                  <p class="card__info">John Doe</p>
+                </div>
+                <div class="card__space-25">
+                  <span class="card__label">Expires</span>
+                        <p class="card__info">10/25</p>
+                </div>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+    </mat-grid-list>
   </mat-drawer-content>
 
 

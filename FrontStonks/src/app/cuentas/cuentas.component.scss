@@ -18,7 +18,16 @@ mat-drawer-container {
     
 }
 
-
+.title h1 {
+    display: inline-flex;
+    margin-right: 10px;
+}
+mat-card {
+    height: 306px;
+    width: 100%;
+    background-color: white;
+    color: black;
+}
 
 
 mat-drawer-content {
@@ -54,7 +63,7 @@ h2 {
 
 
 
-  .dashboard-card {  
+.dashboard-card {  
     position: absolute;  
     top: 15px;  
     left: 15px;  
@@ -67,73 +76,70 @@ h2 {
 
 
   
+  
   .card{
-    width: 320px;
-    height: 190px;
-    }
+  width: 160px;
+  height: 90px;
+
     
-    .card__part{
-      box-shadow: 1px 1px #aaa3a3;
-        top: 0;
-      position: absolute;
-    z-index: 1000;
-      left: 0;
-      display: inline-block;
-        width: 320px;
-        height: 190px;
-        background-image: url('https://image.ibb.co/bVnMrc/g3095.png'), linear-gradient(to right bottom, #fd696b, #fa616e, #f65871, #f15075, #ec4879); /*linear-gradient(to right bottom, #fd8369, #fc7870, #f96e78, #f56581, #ee5d8a)*/
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        border-radius: 8px;
-    }
+  }
+  
+  .card__part{
+
     
-    .card__front{
-      padding: 18px;
-    }
+      top: 0;
+    position: absolute;
     
-    
-    
-    .card__square {
-        border-radius: 5px;
-        height: 30px;
-    }
-    
-    .card_numer {
-        display: block;
-        width: 100%;
-        word-spacing: 4px;
-        font-size: 20px;
-        letter-spacing: 2px;
-        color: #fff;
-        text-align: center;
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
-    
-    .card__space-75 {
-        width: 75%;
-        float: left;
-    }
-    
-    .card__space-25 {
-        width: 25%;
-        float: left;
-    }
-    
-    .card__label {
-        font-size: 10px;
-        text-transform: uppercase;
-        color: rgba(255,255,255,0.8);
-        letter-spacing: 1px;
-    }
-    
-    .card__info {
-        margin-bottom: 0;
-        margin-top: 5px;
-        font-size: 16px;
-        line-height: 18px;
-        color: #fff;
-      letter-spacing: 1px;
+    left: 0;
+    display: inline-block;
+      width: 160px;
+      height: 100px;
+      background-image: url('https://image.ibb.co/bVnMrc/g3095.png'), linear-gradient(to right bottom, #fd696b, #fa616e, #f65871, #f15075, #ec4879); /*linear-gradient(to right bottom, #fd8369, #fc7870, #f96e78, #f56581, #ee5d8a)*/
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 5px;
+      
+  }
+  
+  
+  .card_numer {
+      display: block;
+      width: 100%;
+      word-spacing: 4px;
+      font-size: 5px;
+      letter-spacing: 2px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 5px;
+      margin-top: 7px;
+  }
+  
+  .card__space-75 {
+      width: 75%;
+      float: left;
+  }
+  
+  .card__space-25 {
+      width: 25%;
+      float: left;
+  }
+  
+  .card__label {
+      font-size: 6px;
       text-transform: uppercase;
-    }
+      color: rgba(255,255,255,0.8);
+      letter-spacing: px;
+      margin-left: 5px;
+  }
+  
+  .card__info {
+      margin-bottom: 0;
+      margin-top: 5px;
+      margin-left: 5px;
+      font-size: 9px;
+      line-height: 18px;
+      color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
