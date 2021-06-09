@@ -21,5 +21,8 @@ export class GoalsService {
   deleteGoal(accountId: Number,goaldID: Number):Observable<Goals>{
     return this.http.delete<Goals>(`${this.url}/${accountId}/goals/${goaldID}`);
   }
+  editGoal(accountID:Number,goaldID:Number,goal):Observable<Goals>{
+    return this.http.put<Goals>(`${this.url}/${accountID}/goals/${goaldID}`,goal);
+  }
   
 }

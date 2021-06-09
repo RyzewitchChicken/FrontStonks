@@ -14,10 +14,21 @@ export class GoalsComponent implements OnInit {
   sideBarOpen=true;
   goalsList: Array<Goals>[];
   goal = new Goals();
+  title:string;
+  price:number;
+  date:Date;
+  goalId: number;
   constructor(public modal:NgbModal, private formBuilder: FormBuilder,private goalsService: GoalsService, public appComponent:AppComponent) {
     this.getGoals();
    }
    goalsForm = this.formBuilder.group({
+    id:[''],
+    name: [''],
+    price: [''],
+    date:[''],
+  });
+  editForm = this.formBuilder.group({
+    id:[''],
     name: [''],
     price: [''],
     date:[''],
@@ -59,8 +70,24 @@ export class GoalsComponent implements OnInit {
       );
   }
   editGoal(){
-    // (click) ="open(content)"
+    // this.appComponent.acountID
+    // this.goal.id = this.editForm.value.id;
+    this.goal.name = this.editForm.value.name;
+    this.goal.goalAmount = this.editForm.value.price;
+    this.goal.dateGoal = this.editForm.value.date;
+    console.log(this.goalId);
+    this.goalsService.editGoal(1,this.goalId,this.goal).subscribe(
+      data =>{
+        console.log(data);       
+    })
   }
-  
+  openModal(content,item){
+    this.modal.open(content);
+    this.title = item.name;
+    this.price = item.goalAmount;
+    this.date = item.dateGoal;
+    this.goalId = item.id;
+    console.log(this.date);
+  }
 
 }
