@@ -34,6 +34,9 @@ import { CuentasComponent } from './cuentas/cuentas.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { GoalsComponent } from './goals/goals.component';
 import { GoalsService } from './service/goals.service';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const root: Routes = [
   {path:'', component: LoginComponent},
@@ -78,7 +81,10 @@ const root: Routes = [
     HttpClientModule,
     MatListModule,
     MatGridListModule,
-    MatProgressBarModule
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatProgressBarModule,
+    NgbModule
     
   ],
   providers: [

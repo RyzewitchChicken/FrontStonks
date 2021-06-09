@@ -15,4 +15,11 @@ export class GoalsService {
   getGoals(accountId: Number): Observable<Goals[]>{
     return this.http.get<Goals[]>(`${this.url}/${accountId}/goals`);
   }
+  addGoals(goal,accountId: Number): Observable<Goals>{
+    return this.http.post<Goals>(`${this.url}/${accountId}/goals`,goal);
+  }
+  deleteGoal(accountId: Number,goaldID: Number):Observable<Goals>{
+    return this.http.delete<Goals>(`${this.url}/${accountId}/goals/${goaldID}`);
+  }
+  
 }

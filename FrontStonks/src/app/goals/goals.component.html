@@ -1,4 +1,4 @@
-<app-header (toggleSideBarForMe)="sideBarToggler()" ></app-header>
+<app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
 
 
 
@@ -7,32 +7,89 @@
   <mat-drawer mode="side" [opened]=sideBarOpen>
     <mat-nav-list>
       <h2 matSubheader>Opciones</h2>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="/main"><mat-icon>bar_chart </mat-icon> Resumen</a>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="/cuentas"><mat-icon>credit_card </mat-icon> Cuentas</a>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="/transaction"><mat-icon>list </mat-icon> Transacciones</a>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="/reportes"><mat-icon>folder_open </mat-icon> Reportes</a>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="/goals">	<mat-icon>next_week</mat-icon> Metas</a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/main">
+        <mat-icon>bar_chart </mat-icon> Resumen
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/cuentas">
+        <mat-icon>credit_card </mat-icon> Cuentas
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/transaction">
+        <mat-icon>list </mat-icon> Transacciones
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/reportes">
+        <mat-icon>folder_open </mat-icon> Reportes
+      </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/goals">
+        <mat-icon>next_week</mat-icon> Metas
+      </a>
     </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content>
-    
+
     <!-- <button (click)="getGoals()"></button> -->
     <h1>Mis metas</h1>
-    <div  class="row table-card" *ngFor="let item of goalsList">
-      <div>
+    <div></div>
+    <form [formGroup]="goalsForm">
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input formControlName="name" type="text" matInput>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Precio</mat-label>
+        <input formControlName="price" matInput>
+      </mat-form-field>
 
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-action-list>
+        <button (click)="addGoal()" mat-raised-button> Agregar</button>
+
+      </mat-action-list>
+
+    </form>
+    <div class="row table-card">
+      <div *ngFor="let item of goalsList">
+        <mat-card class="col-sm-2 body-card">
+          <mat-card-title> 
+            {{item.name }}
+            <button class="btn" (click)="modal.open(contenido,item)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button class="btn" (click)="deleteGoal(item.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-card-title>
+          <mat-card-subtitle>
+            fecha limite: {{item.dateGoal}}
+          </mat-card-subtitle>
+          <mat-card-content>
+            Precio: ${{item.goalAmount}}
+          </mat-card-content>
+          <!-- <mat-card-footer></mat-card-footer> -->
+        </mat-card>
       </div>
-      <mat-card class="col-sm-2 body-card">
-        <mat-card-title> {{item.name }}</mat-card-title>
-        <mat-card-subtitle>
-          fecha limite: {{item.dateGoal}}
-        </mat-card-subtitle>
-        <mat-card-content>
-          Precio: ${{item.goalAmount}}
-        </mat-card-content>
-        <!-- <mat-card-footer></mat-card-footer> -->
-      </mat-card>
-      
     </div>
   </mat-drawer-content>
 </mat-drawer-container>
+
+<ng-template #contenido let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">item.name</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p><strong>Are you sure you want to delete <span class="text-primary">"Agatha Harkness"</span> profile?</strong></p>
+
+    <p>All data related to west view profile will be removed permanently.
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>

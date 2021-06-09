@@ -21,9 +21,6 @@ mat-drawer-container {
 
 }
 
-
-
-
 mat-drawer-content {
   padding: 20px;
 
@@ -71,24 +68,41 @@ h2 {
 }
 
 
-.body-card, .table-card {
-    background: white;
-    color: black;
-    margin: 20px;
-    height: fit-content;
-    box-shadow:
-       inset 0 -3em 3em rgba(0,0,0,0.1),
-             0 0  0 2px rgb(255,255,255),
-             0.3em 0.3em 1em rgba(0,0,0,0.3);
+.body-card,
+.table-card {
+  background: white;
+  color: black;
+  margin: 20px;
+  height: fit-content;
+  width: fit-content;
+  max-width: inherit;
+  box-shadow:
+    inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
-.table-card{
-    width: 100%;
-    height: 100%;
-    margin: 20px;
-
+.row>*{
+  width: 30%;
+}
+.btn{
+  padding: inherit;
+}
+.btn mat-icon{
+  margin: inherit;
 }
 
+.table-card {
+  width: 100%;
+  height: 100%;
+  margin: 20px;
 
-.body-card mat-card-subtitle{
-    color: grey;
+}
+.body-card mat-card-subtitle {
+  color: grey;
+}
+::ng-deep.mat-form-field-underline {
+  background-color: black !important;
+}
+mat-label,mat-datepicker-toggle,mat-form-field{
+  color: black;
 }
