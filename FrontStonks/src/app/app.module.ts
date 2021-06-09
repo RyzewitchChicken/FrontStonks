@@ -25,6 +25,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { TransactionComponent } from './transaction/transaction.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import {MatTableModule} from '@angular/material/table';
 import { TransactionService } from './service/transaction.service';
@@ -35,8 +36,11 @@ import { ReportesComponent } from './reportes/reportes.component';
 import { GoalsComponent } from './goals/goals.component';
 import { GoalsService } from './service/goals.service';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
+import {MatNativeDateModule} from '@angular/material/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BoardService } from './service/board.service';
+import { FormsComponent } from './cuentas/forms.component';
+
 
 const root: Routes = [
   {path:'', component: LoginComponent},
@@ -59,6 +63,8 @@ const root: Routes = [
     CuentasComponent,
     ReportesComponent,
     GoalsComponent,
+    FormsComponent,
+    
     
   ],
   imports: [
@@ -84,13 +90,15 @@ const root: Routes = [
     MatDatepickerModule,
     MatNativeDateModule,
     MatProgressBarModule,
-    NgbModule
+    NgbModule,
+    MatDialogModule
     
   ],
   providers: [
     ClienteService,
     TransactionService,
-    GoalsService
+    GoalsService,
+    BoardService
   ],
   bootstrap: [AppComponent]
 })
