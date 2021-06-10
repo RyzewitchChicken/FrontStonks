@@ -16,8 +16,9 @@ export class BoardService {
     return this.http.get<Board[]>(`${this.url}/${accountId}/boards`);
   }
 
-  PostBoards(accountId:Number,board):Observable<Board>{
+  PostBoards(board, accountId:Number):Observable<Board>{
     return this.http.post<Board>(`${this.url}/${accountId}/boards`,board); 
     
   }
+
 }

@@ -31,7 +31,7 @@ import {MatTableModule} from '@angular/material/table';
 import { TransactionService } from './service/transaction.service';
 import { ClienteService } from './service/cliente.service';
 import { HttpClientModule } from '@angular/common/http';
-import { CuentasComponent } from './cuentas/cuentas.component';
+import { CuentasComponent} from './cuentas/cuentas.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { GoalsComponent } from './goals/goals.component';
 import { GoalsService } from './service/goals.service';
@@ -39,7 +39,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BoardService } from './service/board.service';
-import { FormsComponent } from './cuentas/forms.component';
+
+
 
 
 const root: Routes = [
@@ -50,6 +51,7 @@ const root: Routes = [
   {path:'cuentas', component:CuentasComponent},
   {path:'reportes',component:ReportesComponent},
   {path:'goals',component:GoalsComponent}
+  
 ]
 
 @NgModule({
@@ -62,8 +64,7 @@ const root: Routes = [
     TransactionComponent,
     CuentasComponent,
     ReportesComponent,
-    GoalsComponent,
-    FormsComponent,
+    GoalsComponent
     
     
   ],
@@ -93,12 +94,14 @@ const root: Routes = [
     NgbModule,
     MatDialogModule
     
+    
   ],
   providers: [
     ClienteService,
     TransactionService,
     GoalsService,
-    BoardService
+    BoardService,
+    AppComponent
   ],
   bootstrap: [AppComponent]
 })

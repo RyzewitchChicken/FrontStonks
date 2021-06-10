@@ -7,18 +7,22 @@
   <mat-drawer mode="side" [opened]=sideBarOpen>
     <mat-nav-list>
       <h2 matSubheader>Opciones</h2>
+      <mat-divider></mat-divider>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/main"><mat-icon>bar_chart </mat-icon> Resumen</a>
+      <mat-divider></mat-divider>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/cuentas"><mat-icon>credit_card </mat-icon> Cuentas</a>
+      <mat-divider></mat-divider>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/transaction"><mat-icon>list </mat-icon> Transacciones</a>
-      <a mat-list-item routerLinkActive="list-item-active" routerLink="/reportes"><mat-icon>folder_open </mat-icon> Reportes</a>
+      <mat-divider></mat-divider>
       <a mat-list-item routerLinkActive="list-item-active" routerLink="/goals">	<mat-icon>next_week</mat-icon> Metas</a>
+      <mat-divider></mat-divider>
     </mat-nav-list>
   </mat-drawer>
 
   <mat-drawer-content>
     <div class="title">
       <h1>Cuentas</h1> 
-      <button mat-raised-button (click)="openDialog()">Agregar Cuenta</button>
+      <button mat-raised-button (click)="openDialog(myDialog)">Agregar Tablero</button>
     </div> 
     <mat-grid-list cols="2" rowHeight="320px" gutterSize="25px">
       <mat-grid-tile *ngFor="let b of boards">
@@ -48,3 +52,20 @@
 
 
 </mat-drawer-container>
+
+
+<ng-template #myDialog>
+  <mat-dialog-content class="mat-typography">
+    <form [formGroup]="registerForm" class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre Tablero</mat-label>
+        <input matInput formControlName="name" placeholder="Nombre Tablero" >
+      </mat-form-field>
+    
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancelar</button>
+      <button mat-button matDialogClose (click)="PostBoard()" >Agregar</button>
+  </mat-dialog-actions>
+</ng-template>
