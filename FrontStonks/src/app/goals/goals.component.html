@@ -53,28 +53,30 @@
       </mat-action-list>
 
     </form>
-    <div class="row table-card">
-      <div *ngFor="let item of goalsList">
-        <mat-card class="col col-lg-2 body-card">
+    
+    <mat-grid-list cols="2" rowHeight="320px" gutterSize="25px">
+      <mat-grid-tile *ngFor="let item of goalsList">
+        <mat-card >
           <mat-card-title> 
             {{item.name }}
-            <button class="btn" (click)="openModal(contenido,item)">
+            <button class="btn" style="float: right;" (click)="openModal(contenido,item)">
               <mat-icon>edit</mat-icon>
             </button>
-            <button class="btn" (click)="deleteGoal(item.id)">
+            <button class="btn" style="float: right;" (click)="deleteGoal(item.id)">
               <mat-icon>delete</mat-icon>
             </button>
           </mat-card-title>
-          <mat-card-subtitle>
-            fecha limite: {{item.dateGoal}}
-          </mat-card-subtitle>
           <mat-card-content>
-            Precio: ${{item.goalAmount}}
+            <h3>Precio: ${{item.goalAmount}}</h3>
+            <h3>fecha limite: {{item.dateGoal | date: 'dd/MM/yy'}}</h3>
+            
           </mat-card-content>
           <!-- <mat-card-footer></mat-card-footer> -->
         </mat-card>
-      </div>
-    </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    
+
   </mat-drawer-content>
 </mat-drawer-container>
 

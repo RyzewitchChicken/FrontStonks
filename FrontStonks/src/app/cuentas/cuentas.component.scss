@@ -22,6 +22,9 @@ mat-drawer-container {
     display: inline-flex;
     margin-right: 10px;
 }
+.title button {
+    margin-right: 10px;
+}
 mat-card {
     height: 306px;
     width: 100%;
@@ -35,11 +38,24 @@ mat-drawer-content {
     
 }
 
+
+
 .example-form {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
   }
+
+.info_account {
+    text-align: right;
+    margin-top: -130px;
+    
+}
+.interest {
+    text-align: center;
+    
+    
+}
   
   .example-full-width {
     width: 100%;
@@ -65,7 +81,7 @@ mat-grid-tile-header {
 }
 mat-card-title {
     text-align: left;
-
+    font-family: 'Space Mono', monospace;
 }
 a {
     font-family: 'Space Mono', monospace;
@@ -74,7 +90,9 @@ h2 {
     font-family: 'Space Mono', monospace;
 }
 
-
+h4 {
+    font-family: 'Space Mono', monospace;
+}
 
 
 

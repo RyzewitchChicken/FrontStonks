@@ -23,10 +23,11 @@
     <div class="title">
       <h1>Cuentas</h1> 
       <button mat-raised-button (click)="openDialog(myDialog)">Agregar Tablero</button>
+      
     </div> 
     <mat-grid-list cols="2" rowHeight="320px" gutterSize="25px">
-      <mat-grid-tile *ngFor="let b of boards">
-        <mat-card>
+      <mat-grid-tile *ngFor="let b of boards"  >
+        <mat-card *ngFor="let c of accounts | slice:0:1; let i=index">
           <mat-card-title>{{b.name}}</mat-card-title>
           <mat-card-content>
             <div class="card">
@@ -38,15 +39,28 @@
                   <p class="card__info">John Doe</p>
                 </div>
                 <div class="card__space-25">
-                  <span class="card__label">Expires</span>
+                  <span class="card__label">Expira</span>
                         <p class="card__info">10/25</p>
                 </div>
               </div>
             </div>
+            <div class="info_account">
+              <h4>Capital: ${{c.capital}}</h4>
+              <h4>TEA: {{c.tea}}%</h4>
+              <h4>Fecha Inicio: {{c.dateStart | date: 'dd/MM/yy'}}</h4>
+              <h4>Fecha Final: {{c.dateEnd | date: 'dd/MM/yy'}}</h4>
+
+            </div>
+            <div class="interest">
+              <h4>Interes:{{c.interest}}</h4>
+            </div>
+            <div align="end">
+              <button mat-raised-button (click)="openDialog_account(myDialog_account)">Agregar Cuenta</button>
+            </div>
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
-
+   
     </mat-grid-list>
   </mat-drawer-content>
 
@@ -68,4 +82,63 @@
       <button mat-button mat-dialog-close>Cancelar</button>
       <button mat-button matDialogClose (click)="PostBoard()" >Agregar</button>
   </mat-dialog-actions>
+</ng-template>
+
+
+<ng-template #myDialog_account>
+  <mat-dialog-content class="mat-typography">
+    <form [formGroup]="accountForm" class="example-form">
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Capital</mat-label>
+        <input matInput type="number" formControlName="capital" class="example-right-align" placeholder="Capital">
+        <span matPrefix>$&nbsp;</span>
+        <span matSuffix>.00</span>
+      </mat-form-field>
+    
+      <table class="example-full-width" cellspacing="0"><tr>
+        <td>
+          <mat-form-field appearance="fill">
+            <mat-label>Fecha Inicio</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dateStart" placeholder="fechainicial">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+      </td>
+        <td>
+          <mat-form-field appearance="fill">
+            <mat-label>Fecha Final</mat-label>
+            <input matInput [matDatepicker]="picker2" formControlName="dateEnd" placeholder="fechafinal">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+      </td>
+      </tr></table>
+    
+      <table class="example-full-width" cellspacing="0"><tr>
+        <td>
+          <mat-form-field appearance="fill" floatLabel="always">
+            <mat-label>TEA</mat-label>
+            <input matInput type="number" formControlName="tea" class="example-right-align" placeholder="Tea">
+            <span matPrefix>%&nbsp;</span>
+            <span matSuffix>.00</span>
+          </mat-form-field>
+      </td>
+        <td>
+          <mat-form-field appearance="fill" floatLabel="always">
+            <mat-label>TEA Minimo</mat-label>
+            <input matInput type="number" formControlName="mintea" class="example-right-align" placeholder="Mintea">
+            <span matPrefix>%&nbsp;</span>
+            <span matSuffix>.00</span>
+          </mat-form-field>
+      </td>
+  
+      </tr></table>
+    </form>
+
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button mat-button matDialogClose (click)="postAccount()" >Agregar</button>
+</mat-dialog-actions>
+
 </ng-template>

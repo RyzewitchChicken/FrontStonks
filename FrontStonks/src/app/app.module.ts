@@ -39,6 +39,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BoardService } from './service/board.service';
+import { CuentasService } from './service/cuentas.service';
 
 
 
@@ -101,6 +102,7 @@ const root: Routes = [
     TransactionService,
     GoalsService,
     BoardService,
+    CuentasService,
     AppComponent
   ],
   bootstrap: [AppComponent]

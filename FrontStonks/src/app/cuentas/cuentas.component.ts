@@ -1,9 +1,12 @@
+
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AppComponent } from '../app.component';
 import { Board } from '../models/board';
+import { Cuentas } from '../models/cuentas';
 import { BoardService } from '../service/board.service';
+import { CuentasService } from '../service/cuentas.service';
 
 
 @Component({
@@ -15,14 +18,24 @@ export class CuentasComponent implements OnInit {
   sideBarOpen=true
   board=new Board();
   boards: Array<Board>[];
-  constructor(private formBuilder:FormBuilder, public dialog: MatDialog, private boardService:BoardService, private appComponent:AppComponent) { }
+  accounts: Array<Cuentas>[];
+  account=new Cuentas();
+  constructor(private formBuilder:FormBuilder, public dialog: MatDialog, private boardService:BoardService, private appComponent:AppComponent, private cuentasService:CuentasService) { }
   
   registerForm = this.formBuilder.group({
     name:[''],
 
   });
+  accountForm=this.formBuilder.group({
+    capital:[''],
+    tea:[''],
+    mintea:[''],
+    dateStart:[''],
+    dateEnd:['']
+  });
   ngOnInit(): void {
     this.getBoard();
+    this.getAccount();
   }
   sideBarToggler() {
     this.sideBarOpen=!this.sideBarOpen;
@@ -31,6 +44,9 @@ export class CuentasComponent implements OnInit {
   //   const dialogRef = this.dialog.open(FormsComponent);
   // }
   openDialog(templateRef: TemplateRef<any>) {
+    this.dialog.open(templateRef);
+  }
+  openDialog_account(templateRef:TemplateRef<any>) {
     this.dialog.open(templateRef);
   }
   getBoard(){
@@ -51,6 +67,27 @@ export class CuentasComponent implements OnInit {
       }
     );
   } 
+
+  getAccount() {
+    this.cuentasService.GetAccount(this.appComponent.acountID).subscribe(
+      (data:Cuentas[])=>{
+        this.accounts=data['content'];
+        console.table(this.accounts);
+      }
+    )
+  }
+  postAccount() {
+    this.account.capital=this.accountForm.value.capital;
+    this.account.tea=this.accountForm.value.tea;
+    this.account.mintea=this.accountForm.value.mintea;
+    this.account.dateStart=this.accountForm.value.dateStart;
+    this.account.dateEnd=this.accountForm.value.dateEnd;
+    this.cuentasService.PostAccount(this.account,this.appComponent.acountID).subscribe(
+      data=>{
+        this.getAccount();
+      }
+    );
+  }
 }
 
 

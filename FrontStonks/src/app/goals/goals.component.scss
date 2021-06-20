@@ -20,6 +20,14 @@ mat-drawer-container {
 
 
 }
+mat-card {
+  height: 306px;
+  width: 100%;
+  background-color: white;
+  color: black;
+}
+
+
 
 mat-drawer-content {
   padding: 20px;
@@ -35,16 +43,15 @@ mat-grid-tile {
   color: black;
   border-color: black;
   border-radius: 5px;
-
+  
 }
 
 mat-grid-tile-header {
-  color: black;
+  color:black;
 }
-
 mat-card-title {
   text-align: left;
-
+  font-family: 'Space Mono', monospace;
 }
 
 a {
@@ -52,6 +59,9 @@ a {
 }
 
 h2 {
+  font-family: 'Space Mono', monospace;
+}
+h3 {
   font-family: 'Space Mono', monospace;
 }
 
@@ -96,6 +106,7 @@ mat-form-field{
 }
 .btn mat-icon{
   margin: inherit;
+  
 }
 
 .table-card {
@@ -104,12 +115,24 @@ mat-form-field{
   margin: 20px;
 
 }
-.body-card mat-card-subtitle {
-  color: grey;
-}
+
 ::ng-deep.mat-form-field-underline {
   background-color: black !important;
 }
 mat-label,mat-datepicker-toggle,mat-form-field{
   color: black;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
 }
