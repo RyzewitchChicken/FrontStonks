@@ -36,11 +36,11 @@
           
         </mat-grid-tile>
         <mat-grid-tile>
-          <mat-card class="dashboard-card">
+          <mat-card class="dashboard-card" >
             <mat-card-header>
-              <mat-card-title>Cuentas  	<mat-icon routerLink="/cuentas">add_box</mat-icon> </mat-card-title>
+              <mat-card-title>Tus Cuentas  	<mat-icon routerLink="/cuentas">add_box</mat-icon> </mat-card-title>
             </mat-card-header>
-            <mat-card-content>
+            <mat-card-content *ngFor="let c of accounts | slice:0:1; let i=index">
               <div class="card">
                 <div class="card__front card__part">
                   <p class="card__info">BAnco .......</p>
@@ -55,22 +55,17 @@
                   </div>
                 </div>
               </div>
-              <div class="infoC">
-                <p>2000</p>
-                <p>Balance actual</p>
-                <p>2000</p>
-                <p>Interes Ganado</p>
-                <p>2000</p>
-                <p>Interes retirado</p>
+              <div class="info_account">
+                <h4>Capital: ${{c.capital}}</h4>
+                <h4>TEA: {{c.tea}}%</h4>
+                <h4>Fecha Inicio: {{c.dateStart | date: 'dd/MM/yy'}}</h4>
+                <h4>Fecha Final: {{c.dateEnd | date: 'dd/MM/yy'}}</h4>
+  
               </div>
-              <div class="int">
-                <p align="left">Interes Final Estimado</p>
-                <p align="center">3000/4000</p>
-                
-                <div class="but">
-                  <button mat-stroked-button>Registrar Retiro</button>
-                </div>
+              <div class="interest">
+                <h4>Interes:{{c.interest}}</h4>
               </div>
+              
             </mat-card-content>
 
           </mat-card>
@@ -83,27 +78,18 @@
             </mat-card-header>
             <mat-divider></mat-divider>
             <mat-card-content >
-              <table >
+              <table *ngFor="let t of transactions | slice:0:4; let i=index" >
                 <tr>
-                  <th>Banco</th>
-                  <th>Fecha</th> 
+                  <th>Fecha</th>
+                  <th>Capital</th> 
                   <th>Monto</th>
                 </tr>
                 <tr>
-                  <td>Interbank</td>
-                  <td></td>
-                  <td>1000</td>
+                  <td>{{t.date | date: 'dd/MM/yy'}}</td>
+                  <td>${{t.currentCapital}}</td>
+                  <td>${{t.amount}}</td>
                 </tr>
-                <tr>
-                  <td>Interbank</td>
-                  <td></td>
-                  <td>1000</td>
-                </tr>
-                <tr>
-                  <td>Interbank</td>
-                  <td>Doe</td>
-                  <td>500</td>
-                </tr>
+
               </table>
             </mat-card-content>
           </mat-card>
@@ -111,9 +97,18 @@
         <mat-grid-tile>
           <mat-card class="dashboard-card">
             <mat-card-header>
-              <mat-card-title routerLink="/cuentas">Metas</mat-card-title>
+              <mat-card-title routerLink="/cuentas">Metas        <mat-icon routerLink="/goals">add_box</mat-icon> </mat-card-title>
             </mat-card-header>
             <mat-card-content>
+              <mat-card *ngFor="let g of goalsList | slice:0:2; let i=index" class="goals-card"  >
+                <mat-card-title>
+                  {{g.name}}
+                </mat-card-title>
+                <mat-card-content>
+                  <h3>Precio: ${{g.goalAmount}}</h3>
+                  <h3>fecha limite: {{g.dateGoal | date: 'dd/MM/yy'}}</h3>
+                </mat-card-content>
+              </mat-card>
             </mat-card-content>
           </mat-card>
         </mat-grid-tile>

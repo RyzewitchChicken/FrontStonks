@@ -62,9 +62,20 @@ h2 {
     font-family: 'Space Mono', monospace;
   } 
 
-
+  .goals-card {  
+    
+    display: inline-block;
+    background-color: white;
+    color: black;
+    font-family: 'Space Mono', monospace;
+    height: 200px;
+    width: 200px;
+    margin-right: 10px;
+  } 
   
-  
+ h3 {
+    font-family: 'Space Mono', monospace;
+ } 
   .card{
   width: 160px;
   height: 90px;
@@ -142,7 +153,15 @@ h2 {
     float: right;
     margin-bottom: -10px;
 }
-
+.info_account {
+    text-align: right;
+    margin-top: -130px;
+    
+}
+.interest {
+    text-align: center;
+       
+}
 .int {
     
     display: inline;

@@ -82,7 +82,7 @@ export class CuentasComponent implements OnInit {
     this.account.mintea=this.accountForm.value.mintea;
     this.account.dateStart=this.accountForm.value.dateStart;
     this.account.dateEnd=this.accountForm.value.dateEnd;
-    this.cuentasService.PostAccount(this.account,this.appComponent.acountID).subscribe(
+    this.cuentasService.PostAccount(this.account,1).subscribe(
       data=>{
         this.getAccount();
       }

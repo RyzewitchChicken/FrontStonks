@@ -16,7 +16,7 @@ export class CuentasService {
     return this.http.get<Cuentas[]>(`${this.url}/${boardId}/accounts`);
   }
   PostAccount(account, boardId:Number):Observable<Cuentas>{
-    return this.http.post<Cuentas>(`${this.url}/${boardId}/accounts`,account); 
+    return this.http.post<Cuentas>(`${this.url}/${boardId}/account`,account); 
     
   }
 
