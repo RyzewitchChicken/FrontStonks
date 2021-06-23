@@ -1,10 +1,13 @@
 
-import { Component, OnInit, TemplateRef } from '@angular/core';
+
+import { Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AppComponent } from '../app.component';
+import { Bank } from '../models/bank';
 import { Board } from '../models/board';
 import { Cuentas } from '../models/cuentas';
+import { BankService } from '../service/bank.service';
 import { BoardService } from '../service/board.service';
 import { CuentasService } from '../service/cuentas.service';
 
@@ -14,13 +17,20 @@ import { CuentasService } from '../service/cuentas.service';
   templateUrl: './cuentas.component.html',
   styleUrls: ['./cuentas.component.scss']
 })
+
+
+
+
 export class CuentasComponent implements OnInit {
   sideBarOpen=true
   board=new Board();
   boards: Array<Board>[];
   accounts: Array<Cuentas>[];
   account=new Cuentas();
-  constructor(private formBuilder:FormBuilder, public dialog: MatDialog, private boardService:BoardService, private appComponent:AppComponent, private cuentasService:CuentasService) { }
+  banks: Array<Cuentas>[];
+  
+  constructor(private formBuilder:FormBuilder, public dialog: MatDialog, private boardService:BoardService, private appComponent:AppComponent, private cuentasService:CuentasService,
+    private bankService:BankService) { }
   
   registerForm = this.formBuilder.group({
     name:[''],
@@ -31,11 +41,15 @@ export class CuentasComponent implements OnInit {
     tea:[''],
     mintea:[''],
     dateStart:[''],
-    dateEnd:['']
+    dateEnd:[''],
+    bankid:['']
   });
+  
+  bankID: string;
   ngOnInit(): void {
     this.getBoard();
     this.getAccount();
+    this.getBanks();
   }
   sideBarToggler() {
     this.sideBarOpen=!this.sideBarOpen;
@@ -82,12 +96,24 @@ export class CuentasComponent implements OnInit {
     this.account.mintea=this.accountForm.value.mintea;
     this.account.dateStart=this.accountForm.value.dateStart;
     this.account.dateEnd=this.accountForm.value.dateEnd;
-    this.cuentasService.PostAccount(this.account,1).subscribe(
+    this.bankID=this.bankID;
+    this.cuentasService.PostAccount(this.account, this.appComponent.acountID,this.bankID).subscribe(
       data=>{
         this.getAccount();
       }
     );
   }
+  getBanks() {
+    this.bankService.GetBanks().subscribe(
+      (data:Bank[])=>{
+        this.banks=data["content"];
+        console.table(this.banks)
+      }
+    )
+  }
+
+
+
 }
 
 

@@ -19,14 +19,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import { HeaderComponent } from './header/header.component';
-
+import {MatTabsModule} from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { TransactionComponent } from './transaction/transaction.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import { TransactionService } from './service/transaction.service';
 import { ClienteService } from './service/cliente.service';
@@ -40,6 +40,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BoardService } from './service/board.service';
 import { CuentasService } from './service/cuentas.service';
+import { BankService } from './service/bank.service';
 
 
 
@@ -93,7 +94,9 @@ const root: Routes = [
     MatNativeDateModule,
     MatProgressBarModule,
     NgbModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule,
+    MatTabsModule
     
     
   ],
@@ -103,6 +106,7 @@ const root: Routes = [
     GoalsService,
     BoardService,
     CuentasService,
+    BankService,
     AppComponent
   ],
   bootstrap: [AppComponent]

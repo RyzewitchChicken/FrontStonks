@@ -1,3 +1,5 @@
+import { Bank } from "./bank";
+
 export class Cuentas {
     id:number;
     capital:number;
@@ -7,6 +9,7 @@ export class Cuentas {
     dateEnd:Date;
     monthly_payment:boolean;
     interest:number;
+    bank:Bank[]
     constructor() {
         this.capital =0;
         this.tea=0;
