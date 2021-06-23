@@ -22,11 +22,11 @@
   <mat-drawer-content>
     <div class="title">
       <h1>Cuentas</h1> 
-      <button mat-raised-button (click)="openDialog(myDialog)">Agregar Tablero</button> 
+      <button mat-raised-button  (click)="openDialog(myDialog)">Agregar Tablero</button> 
       <button mat-raised-button (click)="openDialog_account(myDialog_account)">Agregar Cuenta</button>
     </div> 
     <mat-grid-list cols="2" rowHeight="320px" gutterSize="25px">
-      <mat-grid-tile *ngFor="let c of accounts"  >
+      <mat-grid-tile  *ngFor="let c of accounts" >
         <mat-card >
           <mat-card-title>{{c.bank.name}}</mat-card-title>
           <mat-card-content>
@@ -86,7 +86,15 @@
 <ng-template #myDialog_account>
   <mat-dialog-content class="mat-typography">
     <form [formGroup]="accountForm" class="example-form">
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Elegir Tablero</mat-label>
+        <mat-select [(ngModel)]="boardID" name="board" [ngModelOptions]="{standalone: true}" >
+          <mat-option *ngFor="let br of boards" [value]="br.id" >
+            {{br.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill" floatLabel="always">
         <mat-label>Elegir Banco</mat-label>
         <mat-select [(ngModel)]="bankID" name="banco" [ngModelOptions]="{standalone: true}" >
           <mat-option *ngFor="let b of banks" [value]="b.id" >

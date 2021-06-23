@@ -9,7 +9,7 @@ import { RegisterComponent } from './auth/register.component';
 import { MainpageComponent } from './main page/mainpage/mainpage.component';
 import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
@@ -41,6 +41,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BoardService } from './service/board.service';
 import { CuentasService } from './service/cuentas.service';
 import { BankService } from './service/bank.service';
+
 
 
 
@@ -96,7 +97,8 @@ const root: Routes = [
     NgbModule,
     MatDialogModule,
     MatSelectModule,
-    MatTabsModule
+    MatTabsModule,
+    MatTooltipModule
     
     
   ],

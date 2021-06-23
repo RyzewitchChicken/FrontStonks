@@ -13,6 +13,7 @@ export class AppComponent {
   title = 'FrontStonks';
   acountID:Number;
   boardId:Number;
+  clientID:Number;
 
 }
 

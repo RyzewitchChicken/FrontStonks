@@ -1,4 +1,5 @@
 import { Bank } from "./bank";
+import { Board } from "./board";
 
 export class Cuentas {
     id:number;
@@ -10,6 +11,7 @@ export class Cuentas {
     monthly_payment:boolean;
     interest:number;
     bank:Bank[]
+    board:Board[]
     constructor() {
         this.capital =0;
         this.tea=0;

@@ -46,6 +46,7 @@ export class CuentasComponent implements OnInit {
   });
   
   bankID: string;
+  boardID:string;
   ngOnInit(): void {
     this.getBoard();
     this.getAccount();
@@ -97,7 +98,8 @@ export class CuentasComponent implements OnInit {
     this.account.dateStart=this.accountForm.value.dateStart;
     this.account.dateEnd=this.accountForm.value.dateEnd;
     this.bankID=this.bankID;
-    this.cuentasService.PostAccount(this.account, this.appComponent.acountID,this.bankID).subscribe(
+    this.boardID=this.boardID;
+    this.cuentasService.PostAccount(this.account, this.boardID,this.bankID).subscribe(
       data=>{
         this.getAccount();
       }
