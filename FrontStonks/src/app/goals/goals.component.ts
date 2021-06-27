@@ -4,6 +4,7 @@ import { AppComponent } from '../app.component';
 import { Goals } from '../models/goal';
 import { GoalsService } from '../service/goals.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-goals',
@@ -18,7 +19,7 @@ export class GoalsComponent implements OnInit {
   price:number;
   date:Date;
   goalId: number;
-  constructor(public modal:NgbModal, private formBuilder: FormBuilder,private goalsService: GoalsService, public appComponent:AppComponent) {
+  constructor(public modal:NgbModal,public dialog:MatDialog, private formBuilder: FormBuilder,private goalsService: GoalsService, public appComponent:AppComponent) {
     this.getGoals();
    }
    goalsForm = this.formBuilder.group({
@@ -89,5 +90,12 @@ export class GoalsComponent implements OnInit {
     this.goalId = item.id;
     console.log(this.date);
   }
-
+  openDialog(content,item) {
+    this.dialog.open(content);
+    this.title = item.name;
+    this.price = item.goalAmount;
+    this.date = item.dateGoal;
+    this.goalId = item.id;
+    console.log(this.date);
+  }
 }

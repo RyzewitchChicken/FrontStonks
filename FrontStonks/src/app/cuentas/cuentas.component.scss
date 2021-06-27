@@ -41,7 +41,13 @@ mat-drawer-content {
     display: block;
     margin: 80px auto 400px;
   }
-
+  .btn{
+    padding: inherit;
+  }
+  .btn mat-icon{
+    margin: inherit;
+    
+  }
 
 .example-form {
     min-width: 150px;

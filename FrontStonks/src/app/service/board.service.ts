@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Board } from '../models/board';
+import { Cliente } from '../models/cliente';
 
 
 
@@ -9,6 +10,7 @@ import { Board } from '../models/board';
   providedIn: 'root'
 })
 export class BoardService {
+  private cliente: Cliente;
   private url: string = 'https://finance-stonks-2021.herokuapp.com/api/clients';
   constructor(private http:HttpClient) { }
 
@@ -20,5 +22,7 @@ export class BoardService {
     return this.http.post<Board>(`${this.url}/${accountId}/boards`,board); 
     
   }
+
+
 
 }

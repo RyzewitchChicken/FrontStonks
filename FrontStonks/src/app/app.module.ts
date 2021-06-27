@@ -46,6 +46,7 @@ import { BankService } from './service/bank.service';
 
 
 
+
 const root: Routes = [
   {path:'', component: LoginComponent},
   {path:'register', component: RegisterComponent},
