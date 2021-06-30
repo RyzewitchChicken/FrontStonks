@@ -41,6 +41,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BoardService } from './service/board.service';
 import { CuentasService } from './service/cuentas.service';
 import { BankService } from './service/bank.service';
+import { ComparadorComponent } from './comparador/comparador.component';
 
 
 
@@ -53,8 +54,8 @@ const root: Routes = [
   {path:'transaction', component: TransactionComponent},
   {path:'cuentas', component:CuentasComponent},
   {path:'reportes',component:ReportesComponent},
-  {path:'goals',component:GoalsComponent}
-  
+  {path:'goals',component:GoalsComponent},
+  {path:'comparador',component:ComparadorComponent}
 ]
 
 @NgModule({
@@ -67,7 +68,8 @@ const root: Routes = [
     TransactionComponent,
     CuentasComponent,
     ReportesComponent,
-    GoalsComponent
+    GoalsComponent,
+    ComparadorComponent
     
     
   ],

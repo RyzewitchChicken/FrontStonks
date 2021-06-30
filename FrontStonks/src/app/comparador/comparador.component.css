@@ -1,0 +1,75 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .mat-icon {
+        vertical-align: middle;
+        margin-right: 20px;
+      }
+    
+}
+
+
+mat-drawer {
+    width: 350px;
+}
+mat-drawer-container {
+    height: 100%;
+    background-color: white;
+    color: black;
+    
+}
+
+label{
+    font-size: large;
+}
+
+table {
+    width: 100%;
+
+  }
+  
+  .table-container {
+    width: 150%;
+    margin: 20px 0px 20px 40px;
+    height: 100%;
+    
+  }
+  table {
+    font-family: 'Space Mono', monospace;
+}
+.mat-column-producto {  
+    width: 32px;
+    padding-right: 24px;
+    text-align: center;
+  }
+  .mat-column-tea {  
+    width: 32px;
+    padding-right: 24px;
+    text-align: center;
+  }
+  .mat-column-total {  
+    width: 70px;
+    padding-right: 24px;
+    text-align: center;
+  }
+  .mat-column-mensual {  
+    width: 80px;
+    padding-right: 24px;
+    text-align: center;
+  }
+  .mat-column-minimo {  
+    width: 70px;
+    padding-right: 24px;
+    text-align: center;
+  }
+
+th.mat-header-cell{
+    font-weight: bold;
+    font-size: large;
+  }
+  td{
+      background-color: white;
+      color: black;
+  }
+	

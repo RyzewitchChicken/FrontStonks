@@ -18,7 +18,11 @@ export class TransactionComponent implements OnInit {
     this.getTransaction();
 
    }
-  
+   clickMessage = '';
+
+   onClickMe() {
+     this.clickMessage = 'You are my hero!';
+   }
   ngOnInit(): void {
     // this.getTransaction();
   }

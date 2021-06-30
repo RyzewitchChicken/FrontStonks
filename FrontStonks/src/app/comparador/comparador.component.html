@@ -1,0 +1,92 @@
+<app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
+
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]=sideBarOpen>
+      <mat-nav-list>
+        <h2 matSubheader>Opciones</h2>
+        <mat-divider></mat-divider>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/main"><mat-icon>bar_chart </mat-icon> Resumen</a>
+        <mat-divider></mat-divider>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/cuentas"><mat-icon>credit_card </mat-icon> Cuentas</a>
+        <mat-divider></mat-divider>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/transaction"><mat-icon>list </mat-icon> Transacciones</a>
+        <mat-divider></mat-divider>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/goals">	<mat-icon>next_week</mat-icon> Metas</a>
+        <mat-divider></mat-divider>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/comparador">	<mat-icon>compare_arrows</mat-icon> Comparador</a>
+        <mat-divider></mat-divider>
+      </mat-nav-list>
+    </mat-drawer>
+
+    <mat-drawer-content>
+                <div class="form-content col-lg-6">
+                    <form method="post" id="compare">
+                    <div class="form-compare row">
+                    <div class="form-item">
+                        <div class="label"><span class="form-label">Moneda:</span></div>
+                        <div id="currency-div" class="radio-group">
+                            <label for="soles"><input type="radio" id="soles" name="currency" class="action-key" checked="checked" value="MN"><span class="btn">Soles</span></label>
+                            <!-- <label for="dolares"><input type="radio" id="dolares" name="currency" class="action-key" value="ME"><span class="btn">Dólares</span></label> -->
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <div class="label"><span class="form-label">Valor del Depósito:</span></div>
+                        <div>
+                        <input type="text" id="balance" name="balance" class="input-text-hidden long">
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <div class="label"><span class="form-label">Plazo (dias):</span></div>
+                        <div>
+                        <input type="text" id="days" name="days" class="input-text-hidden long" >
+                        </div>
+                    </div>
+                    <div  class="form-item">
+                        <button type="button" (click)="onClickMe()" class="btn btn-light">Calcular</button>
+                    </div>
+                    </div>
+                    </form>
+                    <div class="table-container" id="table01" *ngIf="isShown" >
+                        <!-- <button (click)="getTransaction()">click</button> -->
+                        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                    
+                          <!--- Note that these columns can be defined in any order.
+                                      The actual rendered columns are set as a property on the row definition" -->
+                    
+                          <!-- producto Column -->
+                          <ng-container matColumnDef="producto">
+                            <th mat-header-cell *matHeaderCellDef> Producto </th>
+                            <td mat-cell *matCellDef="let element"> {{element.producto}} </td>
+                          </ng-container>
+                    
+                          <!-- tea Column -->
+                          <ng-container matColumnDef="tea">
+                            <th mat-header-cell *matHeaderCellDef> TEA/TREA </th>
+                            <td mat-cell *matCellDef="let element"> {{element.TEA}}% </td>
+                          </ng-container>
+                    
+                          <!-- total Column -->
+                          <ng-container matColumnDef="total">
+                            <th mat-header-cell *matHeaderCellDef> Ganancia Total (Approx) </th>
+                            <td mat-cell *matCellDef="let element"> S/{{element.total}} </td>
+                          </ng-container>
+                    
+                          <!-- mes Column -->
+                          <ng-container matColumnDef="mensual">
+                            <th mat-header-cell *matHeaderCellDef> Ganancia Mensual (Approx) </th>
+                            <td mat-cell *matCellDef="let element"> S/{{element.mensual}} </td>
+                          </ng-container>
+                          <!-- minimo -->
+                          <ng-container matColumnDef="minimo">
+                            <th mat-header-cell *matHeaderCellDef> Monto Minimo de Apertura </th>
+                            <td mat-cell *matCellDef="let element"> S/{{element.minimo}} </td>
+                          </ng-container>
+                    
+                          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                      </div>
+        </div>
+
+    </mat-drawer-content>
+</mat-drawer-container>
