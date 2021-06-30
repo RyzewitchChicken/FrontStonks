@@ -14,7 +14,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
@@ -46,16 +46,17 @@ import { BankService } from './service/bank.service';
 
 
 
+
 const root: Routes = [
-  {path:'', component: LoginComponent},
-  {path:'register', component: RegisterComponent},
-  {path:'main', component: MainpageComponent},
-  {path:'transaction', component: TransactionComponent},
-  {path:'cuentas', component:CuentasComponent},
-  {path:'reportes',component:ReportesComponent},
-  {path:'goals',component:GoalsComponent}
-  
-]
+  {path: '', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'main', component: MainpageComponent},
+  {path: 'transaction', component: TransactionComponent},
+  {path: 'cuentas', component: CuentasComponent},
+  {path: 'reportes', component: ReportesComponent},
+  {path: 'goals', component: GoalsComponent}
+
+];
 
 @NgModule({
   declarations: [
@@ -68,8 +69,8 @@ const root: Routes = [
     CuentasComponent,
     ReportesComponent,
     GoalsComponent
-    
-    
+
+
   ],
   imports: [
     BrowserModule,
@@ -99,8 +100,8 @@ const root: Routes = [
     MatSelectModule,
     MatTabsModule,
     MatTooltipModule
-    
-    
+
+
   ],
   providers: [
     ClienteService,
