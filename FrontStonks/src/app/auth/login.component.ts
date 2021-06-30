@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
 
   isLogged = false;
   cliente = new Cliente();
+  hide = true;
+
   // userName : String;
   // password: String;
   constructor(private formBuilder: FormBuilder,private appComponent:AppComponent, private clientService: ClienteService,private router:Router) { }
