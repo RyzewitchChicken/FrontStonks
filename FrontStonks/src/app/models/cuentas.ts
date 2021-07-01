@@ -8,7 +8,7 @@ export class Cuentas {
     mintea:number;
     dateStart:Date;
     dateEnd:Date;
-    monthly_payment:boolean;
+    monthlyPayment:boolean;
     interest:number;
     bank:Bank[]
     board:Board[]

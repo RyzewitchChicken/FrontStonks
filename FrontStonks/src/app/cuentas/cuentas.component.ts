@@ -47,7 +47,8 @@ export class CuentasComponent implements OnInit {
     mintea:[''],
     dateStart:[''],
     dateEnd:[''],
-    bankid:['']
+    bankid:[''],
+    monthlyPayment:['']
   });
   
   bankID: string;
@@ -88,6 +89,7 @@ export class CuentasComponent implements OnInit {
         this.getBoard();
       }
     );
+    this.registerForm.reset();
   } 
 
   getAccount() {
@@ -107,12 +109,14 @@ export class CuentasComponent implements OnInit {
     this.account.dateEnd=this.accountForm.value.dateEnd;
     this.bankID=this.bankID;
     this.boardID=this.boardID;
+    this.account.monthlyPayment=this.accountForm.value.monthlyPayment;
     
     this.cuentasService.PostAccount(this.account, this.boardID,this.bankID).subscribe(
       data=>{
         this.getAccount();
       }
     );
+    this.accountForm.reset();
   }
   getBanks() {
     this.bankService.GetBanks().subscribe(

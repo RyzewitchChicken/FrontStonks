@@ -177,6 +177,17 @@
       </td>
   
       </tr></table>
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Pago Mensual</mat-label>
+        <mat-select formControlName="monthlyPayment" name="payment"   >
+          <mat-option  [value]="true" >
+            Si
+          </mat-option>
+          <mat-option  [value]="false" >
+            No
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
     </form>
 
