@@ -1,89 +1,104 @@
 :host {
-display: flex;
-flex-direction: column;
-height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
 }
+
 .mat-icon {
-vertical-align: middle;
-margin-right: 20px;
-}
-form{
-width:300px;
-padding:16px;
-border-radius:10px;
-margin:auto;
-background-color:#ccc;
+  vertical-align: middle;
+  margin-right: 20px;
 }
 
-.form-label{
-font-weight:bold;
-display:inline-block;
+form {
+  width: 300px;
+  padding: 16px;
+  border-radius: 10px;
+  margin: auto;
+  background-color: #ccc;
 }
-.form-item-blank{
-color:#ccc;
+
+.form-label {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.form-item-blank {
+  color: #ccc;
 }
 
 
 mat-drawer {
   width: 350px;
 }
+
 mat-drawer-container {
-padding-top: 24px;
+  padding-top: 24px;
   height: 100%;
   background-color: white;
   color: black;
 }
-label{
-    font-size: large;
+
+label {
+  font-size: large;
 }
 
 table {
-    width: 100%;
+  width: 100%;
 
-  }
-  
-  .table-container {
-    width: 150%;
-    margin: 20px 0px 20px 40px;
-    height: 100%;
-    
-  }
-  table {
-    font-family: 'Space Mono', monospace;
 }
-.mat-column-producto {  
-    width: 32px;
-    padding-right: 24px;
-    text-align: center;
-  }
-  .mat-column-tea {  
-    width: 32px;
-    padding-right: 24px;
-    text-align: center;
-  }
-  .mat-column-total {  
-    width: 70px;
-    padding-right: 24px;
-    text-align: center;
-  }
-  .mat-column-mensual {  
-    width: 80px;
-    padding-right: 24px;
-    text-align: center;
-  }
-  .mat-column-minimo {  
-    width: 70px;
-    padding-right: 24px;
-    text-align: center;
-  }
 
-th.mat-header-cell{
-    font-weight: bold;
-    font-size: large;
-  }
-  td{
-      background-color: white;
-      color: black;
-  }
-	
+.table-container {
+  width: 150%;
+  margin: 20px 0px 20px 40px;
+  height: 100%;
+
+}
+
+table {
+  font-family: 'Space Mono', monospace;
+}
+
+.mat-column-producto {
+  width: 32px;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-tea {
+  width: 32px;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-total {
+  width: 70px;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-mensual {
+  width: 80px;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-minimo {
+  width: 70px;
+  padding-right: 24px;
+  text-align: center;
+}
+
+a {
+  font-family: 'Space Mono', monospace;
+}
+
+th.mat-header-cell {
+  font-weight: bold;
+  font-size: large;
+}
+
+td {
+  background-color: white;
+  color: black;
+}
