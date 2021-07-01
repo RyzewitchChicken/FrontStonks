@@ -26,20 +26,27 @@
       <h1>Cuentas</h1> 
       <button mat-raised-button  (click)="openDialog(myDialog)">Agregar Tablero</button> 
       <button mat-raised-button (click)="openDialog_account(myDialog_account)">Agregar Cuenta</button>
+      <button mat-raised-button (click)="openDialog_account(myDialog_boardname)">Mostrar Cuentas</button>
     </div> 
     <mat-grid-list cols="2" rowHeight="320px" gutterSize="25px">
       <mat-grid-tile  *ngFor="let c of accounts" >
         <mat-card >
-          <mat-card-title>{{c.bank.name}}</mat-card-title>
+          <mat-card-title>
+            {{c.board.name}}
+            <button class="btn" (click)="delete_account(c.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-card-title>
+
           <mat-card-content>
 
             <div class="card">
               <div class="card__front card__part">
-                <p class="card__info">BAnco .......</p>
+                <p class="card__info">BAnco {{c.bank.name}}</p>
                 <p class="card_numer">**** **** **** 6258</p>
                 <div class="card__space-75">
                   <span class="card__label">Card holder</span>
-                  <p class="card__info">John Doe</p>
+                  <p class="card__info">{{this.appComponent.name}}</p>
                 </div>
                 <div class="card__space-25">
                   <span class="card__label">Expira</span>
@@ -69,7 +76,7 @@
 
 
 <ng-template #myDialog>
-  <mat-dialog-content class="mat-typography">
+  <mat-dialog-content class="mat-typography" color="lime">
     <form [formGroup]="registerForm" class="example-form">
       <mat-form-field class="example-full-width">
         <mat-label>Nombre Tablero</mat-label>
@@ -81,6 +88,26 @@
   <mat-dialog-actions align="end">
       <button mat-button mat-dialog-close>Cancelar</button>
       <button mat-button matDialogClose (click)="PostBoard()" >Agregar</button>
+  </mat-dialog-actions>
+</ng-template>
+
+<ng-template #myDialog_boardname>
+  <mat-dialog-content class="mat-typography">
+    <form  class="example-form">
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Elegir Tablero</mat-label>
+        <mat-select [(ngModel)]="boardsID" name="board" [ngModelOptions]="{standalone: true}" >
+          <mat-option *ngFor="let br of boards" [value]="br.id" >
+            {{br.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancelar</button>
+      <button mat-button matDialogClose (click)="getAccount()">Mostrar</button>
   </mat-dialog-actions>
 </ng-template>
 
