@@ -10,7 +10,7 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  hide = true;
   isLogged = false;
   cliente = new Cliente();
   // userName : String;
