@@ -61,7 +61,7 @@
         <mat-card >
           <mat-card-title> 
             {{item.name }}
-            <button class="btn" style="float: right;" (click)="openDialog(contenido,item)">
+            <button class="btn" style="float: right;" (click)="openModal(contenido,item)">
               <mat-icon>edit</mat-icon>
             </button>
             <button class="btn" style="float: right;" (click)="deleteGoal(item.id)">
@@ -85,12 +85,12 @@
 <ng-template #contenido let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">{{title}}</h4>
-    <button mat-button mat-dialog-close>
-      <mat-icon>close</mat-icon>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
     </button>
   </div>
-  <mat-dialog-content class="mat-typography">
-    <form [formGroup]="editForm" class="example-form"> 
+  <div class="modal-body">
+    <form [formGroup]="editForm"> 
       <mat-form-field>
         <mat-label>{{title}}</mat-label>
         <input formControlName="name" type="text" matInput placeholder="Nombre">
@@ -104,9 +104,9 @@
         <input formControlName="date" type="text" matInput placeholder="fecha">
       </mat-form-field>
     </form>
-  </mat-dialog-content>
-  <mat-dialog-actions align="end">
-    <button mat-button (click)="editGoal()">Editar</button>
-    <button mat-button mat-dialog-close>Close</button>
-  </mat-dialog-actions>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="editGoal()">Editar</button>
+    <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Close</button>
+  </div>
 </ng-template>

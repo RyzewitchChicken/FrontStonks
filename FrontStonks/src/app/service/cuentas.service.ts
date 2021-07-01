@@ -10,7 +10,6 @@ export class CuentasService {
 
   
   private url: string = 'https://finance-stonks-2021.herokuapp.com/api/board';
-  private url2: string = 'https://finance-stonks-2021.herokuapp.com/api/account';
   constructor(private http:HttpClient) { }
 
   GetAccount(boardId:Number): Observable<Cuentas[]> {
@@ -19,9 +18,6 @@ export class CuentasService {
   PostAccount(account, boardId:string, bankId:string):Observable<Cuentas>{
     return this.http.post<Cuentas>(`${this.url}/${boardId}/account?bank=${bankId}`,account); 
     
-  }
-  DeleteAccount(boardID:Number):Observable<Cuentas> {
-    return this.http.delete<Cuentas>(`${this.url2}/${boardID}`);
   }
 
 }

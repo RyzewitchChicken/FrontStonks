@@ -12,7 +12,6 @@ import { BoardService } from '../service/board.service';
 import { CuentasService } from '../service/cuentas.service';
 
 
-
 @Component({
   selector: 'app-cuentas',
   templateUrl: './cuentas.component.html',
@@ -30,12 +29,8 @@ export class CuentasComponent implements OnInit {
   account=new Cuentas();
   banks: Array<Cuentas>[];
   
-  
-  constructor(private formBuilder:FormBuilder, public dialog: MatDialog, private boardService:BoardService, public appComponent:AppComponent, private cuentasService:CuentasService,
-    private bankService:BankService) 
-    {
-      
-    }
+  constructor(private formBuilder:FormBuilder, public dialog: MatDialog, private boardService:BoardService, private appComponent:AppComponent, private cuentasService:CuentasService,
+    private bankService:BankService) { }
   
   registerForm = this.formBuilder.group({
     name:[''],
@@ -52,7 +47,6 @@ export class CuentasComponent implements OnInit {
   
   bankID: string;
   boardID:string;
-  boardsID:Number;
   ngOnInit(): void {
     this.getBoard();
     this.getAccount();
@@ -72,7 +66,6 @@ export class CuentasComponent implements OnInit {
   }
   getBoard(){
     // this.appComponent.acountID
-    this.boardID=this.boardID;
     this.boardService.GetBoards(this.appComponent.acountID).subscribe(
       (data: Board[])=>{
         this.boards = data['content'];
@@ -91,8 +84,7 @@ export class CuentasComponent implements OnInit {
   } 
 
   getAccount() {
-    this.boardsID=this.boardsID;
-    this.cuentasService.GetAccount(this.boardsID).subscribe(
+    this.cuentasService.GetAccount(this.appComponent.acountID).subscribe(
       (data:Cuentas[])=>{
         this.accounts=data['content'];
         console.table(this.accounts);
@@ -107,7 +99,6 @@ export class CuentasComponent implements OnInit {
     this.account.dateEnd=this.accountForm.value.dateEnd;
     this.bankID=this.bankID;
     this.boardID=this.boardID;
-    
     this.cuentasService.PostAccount(this.account, this.boardID,this.bankID).subscribe(
       data=>{
         this.getAccount();
@@ -122,15 +113,7 @@ export class CuentasComponent implements OnInit {
       }
     )
   }
-  delete_account(boardid){
-    // console.log(goalID);
-    this.cuentasService.DeleteAccount(boardid).subscribe(
-        (data)=>{
-          console.log(data);
-          this.getAccount();
-        }
-      );
-  }
+
 
 
 }

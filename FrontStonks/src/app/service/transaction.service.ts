@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class TransactionService {
   // public accountId: number;
-  private url: string = 'https://finance-stonks-2021.herokuapp.com/api/board';
+  private url: string = 'https://finance-stonks-2021.herokuapp.com/api/account';
 
   constructor(private http: HttpClient) { }
 
